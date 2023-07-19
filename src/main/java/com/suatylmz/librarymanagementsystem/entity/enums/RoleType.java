@@ -6,7 +6,5 @@ public enum RoleType {
     TEACHER,
     STUDENT,
     MANAGER,
-    ASSISTANT_MANAGER,
-    ADVISORY_TEACHER,
     GUEST_USER
 }
