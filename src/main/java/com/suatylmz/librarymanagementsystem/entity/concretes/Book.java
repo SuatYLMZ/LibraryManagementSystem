@@ -1,11 +1,13 @@
 package com.suatylmz.librarymanagementsystem.entity.concretes;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,11 +31,17 @@ public class Book {
     private Long availableCopies;
 
     @ManyToMany(mappedBy = "borrowedBooks")
-    private Set<Student> bookBorrowers= new HashSet<>();
+    private Set<Student> bookBorrowersStudent= new HashSet<>();
 
     @ManyToMany(mappedBy = "borrowedBooks")
-    private Set<Student> laptopBorrowers= new HashSet<>();
+    private Set<Teacher> bookBorrowersTeacher= new HashSet<>();
 
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yy-MM-dd")
+    private LocalDate borrowedDate;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yy-MM-dd")
+    private LocalDate returnDate;
 
 
 
