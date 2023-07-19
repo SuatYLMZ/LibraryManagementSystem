@@ -5,10 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -26,6 +25,14 @@ public class Book {
     private String author;
 
     private String description;
+
+    private Long availableCopies;
+
+    @ManyToMany(mappedBy = "borrowedBooks")
+    private Set<Student> bookBorrowers= new HashSet<>();
+
+    @ManyToMany(mappedBy = "borrowedBooks")
+    private Set<Student> laptopBorrowers= new HashSet<>();
 
 
 

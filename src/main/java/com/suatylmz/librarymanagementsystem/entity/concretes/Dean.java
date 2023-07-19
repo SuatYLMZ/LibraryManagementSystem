@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "dean")
+@Table(name = "deans")
 @Getter
 @Setter
 @NoArgsConstructor
