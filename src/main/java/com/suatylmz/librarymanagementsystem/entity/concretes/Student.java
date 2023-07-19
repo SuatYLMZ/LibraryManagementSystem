@@ -1,4 +1,19 @@
 package com.suatylmz.librarymanagementsystem.entity.concretes;
 
-public class Student {
+import com.suatylmz.librarymanagementsystem.entity.abstracts.User;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "student")
+@Getter
+@Setter
+@NoArgsConstructor
+@SuperBuilder
+public class Student extends User {
 }
