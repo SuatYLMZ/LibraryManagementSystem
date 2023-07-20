@@ -6,10 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Data
@@ -30,11 +31,6 @@ public class Book {
 
     private Long availableCopies;
 
-    @ManyToMany(mappedBy = "borrowedBooks")
-    private Set<Student> bookBorrowersStudent= new HashSet<>();
-
-    @ManyToMany(mappedBy = "borrowedBooks")
-    private Set<Teacher> bookBorrowersTeacher= new HashSet<>();
 
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yy-MM-dd")
